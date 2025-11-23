@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for traffic signals */
+@layer components {
+  .traffic-light { @apply w-6 h-6 rounded-full shadow-lg transition-all duration-300; }
+  .traffic-light-red { @apply bg-traffic-red shadow-red-500/50; }
+  .traffic-light-yellow { @apply bg-traffic-yellow shadow-yellow-500/50; }
+  .traffic-light-green { @apply bg-traffic-green shadow-green-500/50; }
+  .traffic-light-off { @apply bg-gray-400 opacity-30; }
+
+  .intersection-marker {
+    @apply flex flex-col items-center justify-center w-12 h-12 rounded-full bg-white shadow-lg border-2 border-gray-300 cursor-pointer hover:shadow-xl transition-shadow;
+  }
+
+  .vehicle-dot { @apply w-2 h-2 bg-blue-500 rounded-full absolute animate-traffic-flow; }
+}
